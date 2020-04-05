@@ -41,4 +41,18 @@ As an Executive Producer within Capstone company, I have been able to create a s
 - `. setup.sh`
 - `python manage.py db upgrade`
 - `python manage.py seed`
-- `flask run --reload`
+- `python3 run.py`
+
+## Access Details
+### Click the login link below:
+[Login to Auth0](https://coffeeshop-ng.auth0.com/authorize?audience=capstone-movie-api&response_type=token&client_id=CY1QiGQBvxSZhP9KDQnNnNH9iklXBJxz&redirect_uri=http://localhost:8080/login-results
+) 
+### and user the login details below to generate a token
+#### The app uses a third-party service (Auth0) for authentication.
+
+### The 3 login details are as follows:
+ | Email | Password | Role |
+ | ------ | --------|  ---- |
+ | producer@capstone.com|capstone2020#|Executive Producer |
+ | director@capstone.com|capstone2020#|Casting Director|
+ | assistant@capstone.com|capstone2020#|Casting Assistant|
