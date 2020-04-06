@@ -41,16 +41,15 @@ def get_all_actors(jwt):
 # @TODO: GET ACTORS BY ID
 @app.route('/actors/<int:id>')
 @requires_auth('get:actors')
-def get_actor_by_id(jwt,id):
+def get_actor_by_id(jwt, id):
     actor = Actor.query.get(id)
-    result = actor.format
 
     if actor is None:
         abort(404)
     else:
         return jsonify({
             'success': True,
-            'actor': result,
+            'actor': actor.format,
         }), 200
 
 
@@ -92,7 +91,7 @@ def post_actor(jwt):
 # '''
 @app.route('/actors/<int:id>', methods=['PATCH'])
 @requires_auth('patch:actors')
-def edit_actor(jwt,id):
+def edit_actor(jwt, id):
     data = request.get_json()
     name = data.get('name', '')
     age = data.get('age', '')
@@ -127,7 +126,7 @@ def edit_actor(jwt,id):
 # '''
 @app.route('/actors/<int:id>', methods=['DELETE'])
 @requires_auth('delete:actors')
-def delete_actor(jwt,id):
+def delete_actor(jwt, id):
     actor = Actor.query.get(id)
 
     if actor is None:
@@ -176,7 +175,7 @@ def get_all_movies(jwt):
 
 @app.route('/movies/<int:id>')
 @requires_auth('get:movies')
-def get_movie_by_id(jwt,id):
+def get_movie_by_id(jwt, id):
     try:
         movie = Movie.query.get(id)
 
@@ -185,7 +184,7 @@ def get_movie_by_id(jwt,id):
         else:
             return jsonify({
                 'success': True,
-                'actor': movie.format,
+                'movie': movie.format,
             }), 200
     except():
         abort(500)
@@ -227,7 +226,7 @@ def post_movie(jwt):
 # '''
 @app.route('/movies/<int:id>', methods=['PATCH'])
 @requires_auth('patch:movies')
-def edit_movie(jwt,id):
+def edit_movie(jwt, id):
     data = request.get_json()
     title = data.get('title', '')
     date = data.get('release_date', '')
@@ -261,7 +260,7 @@ def edit_movie(jwt,id):
 # '''
 @app.route('/movies/<int:id>', methods=['DELETE'])
 @requires_auth('delete:movies')
-def delete_movie(jwt,id):
+def delete_movie(jwt, id):
     movie = Movie.query.get(id)
 
     if movie is None:
@@ -363,6 +362,3 @@ def duplicate_resource(error):
         "error": 409,
         "message": "resource existed"
     }), 409
-
-
-app.run(debug=True)

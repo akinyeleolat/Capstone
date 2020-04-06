@@ -38,10 +38,18 @@ As an Executive Producer within Capstone company, I have been able to create a s
 ## Run the following command on your terminal
 - `virtualenv venv`
 - `pip install -r requirements.txt`
-- `. setup.sh`
-- `python manage.py db upgrade`
-- `python manage.py seed`
-- `python3 run.py`
+- `. ./setup.sh`
+- `. ./setup_db.sh`
+
+
+#### For Development, 
+- run `. ./start_dev.sh`
+
+### Productions
+- run `python run.py`
+
+## Running test
+- `python test_runner.sh`
 
 ## Access Details
 ### Click the login link below:
@@ -56,3 +64,4 @@ As an Executive Producer within Capstone company, I have been able to create a s
  | producer@capstone.com|capstone2020#|Executive Producer |
  | director@capstone.com|capstone2020#|Casting Director|
  | assistant@capstone.com|capstone2020#|Casting Assistant|
+ 
