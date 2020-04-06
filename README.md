@@ -1,4 +1,6 @@
 # Capstone
+[![Build Status](https://travis-ci.org/akinyeleolat/Capstone.svg?branch=master)](https://travis-ci.org/akinyeleolat/Capstone)
+
 As an Executive Producer within Capstone company, I have been able to create a system to simplify and streamline the process of creating movies and managing and assigning actors to those movies.
 
 ## Required Features
@@ -46,6 +48,10 @@ As an Executive Producer within Capstone company, I have been able to create a s
 - run `. ./start_dev.sh`
 
 ### Productions
+- create app on `heroku`
+- set `ENV` on heroku dashboard
+- `heroku login`
+- `heroku run python manage.py db upgrade -app application-name`
 - run `python run.py`
 
 ## Running test
@@ -64,4 +70,37 @@ As an Executive Producer within Capstone company, I have been able to create a s
  | producer@capstone.com|capstone2020#|Executive Producer |
  | director@capstone.com|capstone2020#|Casting Director|
  | assistant@capstone.com|capstone2020#|Casting Assistant|
+ 
+ ## ENDPOINTS
+
+### Use This [Heroku Base Url](https://cap.herokuapp.com) to access all the endpoints
+
+ | Method | ROUTE | PERMISSION      | Role | Body | Description |
+ | ------ | ----------- | -------------- | ---- |------------|-----|
+ | Get | / | * | * | welcome to capstone movie | index page |
+ | POST | /movies | post:movies | Executive Producer |{ title:"String", release_date:"YYYY-MM-DD" }| create a movie |
+ | PATCH | /movies/id | patch:movies | Executive Producer/Casting Director |{ title:"String", release_date:"YYYY-MM-DD" }| Updates a movie |
+ | GET | /movies | get:movies | All Registered Users  | N/A | Gets list of movies |
+ | GET | /movies/id | get:movies | All Registered Users | N/A | Get a movie |
+ | DELETE | /movies/id | delete:movies | Executive Producer | N/A | Delete a movie |
+ | POST | /actors | post:actors | Executive Producer/Casting Director|{ name:"String", age:"Number", gender:"String" } |Create an actor |
+ | PATCH | /actors/id | patch:actors | Executive Producer/Casting Director | { name:"optional String", age:"optional Number" gender:"optional String" }| Updates an actor |
+ | GET | /actors | get:actors | All Registered Users | N/A | Gets list of actors |
+ | GET | /actors/id | get:actors | All Registered Users | N/A | Get an actor |
+ | DELETE | /actors/id | delete:actors | Executive Producer/Casting Director | N/A | delete an actor |
+
+
+## Running test
+- `python test_runner.sh`
+
+## Technologies
+- Python/Flask
+- Auth0
+- SQLAlchemy
+- Flask-Migrate
+- Flask-Script
+
+
+## Authors
+#### Oluwatosin Akinyele- [Capstone](https://capstone-ng.herokuapp.com)
  
