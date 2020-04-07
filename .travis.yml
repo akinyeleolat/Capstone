@@ -12,7 +12,7 @@
       - "3.6"
     script:
       - ". ./test_runner.sh"
-      - pytest --cov
+#      - pytest --cov
     addons:
       postgresql: "9.6"
 
