@@ -1,5 +1,5 @@
 # Capstone
-[![Build Status](https://travis-ci.org/akinyeleolat/Capstone.svg?branch=master)](https://travis-ci.org/akinyeleolat/Capstone)
+[![Build Status](https://travis-ci.org/akinyeleolat/Capstone.svg?branch=master)](https://travis-ci.org/akinyeleolat/Capstone)  [![Coverage Status](https://coveralls.io/repos/github/akinyeleolat/Capstone/badge.svg?branch=master)](https://coveralls.io/github/akinyeleolat/Capstone?branch=master)
 
 As an Executive Producer within Capstone company, I have been able to create a system to simplify and streamline the process of creating movies and managing and assigning actors to those movies.
 

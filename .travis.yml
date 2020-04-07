@@ -2,10 +2,19 @@
     before_script:
       - "psql -c 'create database capstone_test_db;' -U postgres"
     cache: pip
-    install: "pip install -r requirements.txt"
+    install:
+      - "pip install -r requirements.txt"
+      - "pip install pytest"
+      - "pip install pytest-cov"
+      - "pip install coveralls"
     language: python
     python:
       - "3.6"
-    script: ". ./test_runner.sh"
+    script:
+      - ". ./test_runner.sh"
+      - pytest --cov
     addons:
       postgresql: "9.6"
+
+    after_success:
+      - coveralls
